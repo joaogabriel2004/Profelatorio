@@ -1,0 +1,9 @@
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#contentPage {
+    padding: 50px;
+    width: 100%;
+}

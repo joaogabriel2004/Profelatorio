@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Sidebar.css";
 import { FaCog, FaUserGraduate, FaListUl, FaQuestion } from "react-icons/fa";
 
 const Sidebar = () => {
+ 
   return (
     <div className="sidebar">
       <div className="sidebar-header">
