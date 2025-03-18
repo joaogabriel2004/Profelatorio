@@ -32,11 +32,12 @@ const Descritores = () => {
         <div className="modalDescritores">
             <h2>Informações gerais</h2>
             <select name="Turma" id="select-turma">
-                <option value="Selecione uma Turma" disabled>Selecione uma Turma</option>
-                <option value="Turma 1">Turma 1</option>
-                <option value="Turma 2">Turma 2</option>
-                <option value="Turma 3">Turma 3</option>
-                <option value="Turma 4">Turma 4</option>
+                <h3>Selecione a disciplina</h3>
+                <option value="Selecione uma Turma" disabled>Selecione uma Disciplina</option>
+                <option value="Disciplina 1">Disciplina 1</option>
+                <option value="Disciplina 2">Disciplina 2</option>
+                <option value="Disciplina 3">Disciplina 3</option>
+                <option value="Disciplina 4">Disciplina 4</option>
             </select>
             <h3>Adicionar Descritores</h3>
             <form onSubmit={handleSubmit}>
