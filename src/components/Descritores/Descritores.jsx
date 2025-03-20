@@ -10,6 +10,12 @@ const Descritores = () => {
         setInputs([...inputs, ""]);
     };
 
+    const handleRemoveInput = (index) => {
+        if (inputs.length > 1) {
+            setInputs(inputs.filter((_, i) => i !== index)); // Remove apenas o input clicado
+        }
+    };
+
     // Função para atualizar o valor do campo
     const handleChangeInput = (value, index) => {
         const updatedInputs = [...inputs];
@@ -39,25 +45,29 @@ const Descritores = () => {
                 <option value="Disciplina 3">Disciplina 3</option>
                 <option value="Disciplina 4">Disciplina 4</option>
             </select>
+
             <h3>Adicionar Descritores</h3>
             <form onSubmit={handleSubmit}>
-                {inputs.map((input, index) => (
-                    <div key={index} className="input-group">
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={(e) => handleChangeInput(e.target.value, index)}
-                        placeholder={`Descritor ${index + 1}`}
-                        className="input-field"
-                    />
-                    </div>
-                ))}
-                <button type="button" onClick={handleAddInput} className="add-button">
-                    +
-                </button>
-                <button type="submit" className="submit-button">
-                    Enviar
-                </button>
+                <div className="divDescritores">
+                    {inputs.map((input, index) => (
+                        <div key={index} className="input-group">
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => handleChangeInput(e.target.value, index)}
+                            placeholder={`Descritor ${index + 1}`}
+                            className="input-field"
+                        />
+                        <button type="button" onClick={() => handleRemoveInput(index)} className="remove-button">-</button>
+                        </div>
+                    ))}
+                    <button type="button" onClick={handleAddInput} className="add-button">
+                        +
+                    </button>
+                    <button type="submit" className="submit-button">
+                        Enviar
+                    </button>
+                </div>
             </form>
         </div>
     </div>
